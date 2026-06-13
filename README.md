@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lab12_DAWA_Fernando_Mas
 
-## Getting Started
+## Autenticacion OAUTH
 
-First, run the development server:
+Proyecto desarrollado con Next.js y NextAuth.js para implementar autenticacion en una aplicacion web.
+
+En este laboratorio se trabajo el registro y logueo de usuarios usando diferentes proveedores de autenticacion:
+
+- Google
+- Discord
+- GitHub
+- Credenciales con correo y contrasena
+
+## Desarrollo
+
+Primero se habilitaron las credenciales OAuth en los portales de desarrolladores de cada proveedor:
+
+- Google Cloud Console
+- GitHub Developer Settings
+- Discord Developer Portal
+
+Luego se configuraron los Client ID, Client Secret y las URL de callback necesarias en el archivo `.env.local`.
+
+En la aplicacion se uso NextAuth.js para conectar los proveedores OAuth y manejar la sesion del usuario. Tambien se agrego autenticacion con credenciales mediante `CredentialsProvider`.
+
+Para el registro con credenciales se implemento cifrado de contrasenas usando `bcrypt`. Ademas, se agrego un control de intentos fallidos para bloquear temporalmente el inicio de sesion luego de varios intentos incorrectos.
+
+## Funcionalidades
+
+- Login con Google.
+- Login con GitHub.
+- Login con Discord.
+- Registro con nombre, correo y contrasena.
+- Inicio de sesion con credenciales.
+- Cifrado de contrasenas con bcrypt.
+- Bloqueo temporal por multiples intentos fallidos.
+- Proteccion de rutas privadas con middleware.
+
+## Variables de entorno
+
+El proyecto usa variables de entorno para las credenciales de OAuth y NextAuth:
+
+```env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+GITHUB_ID=
+GITHUB_SECRET=
+
+DISCORD_ID=
+DISCORD_SECRET_CLIENT=
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=
+```
+
+El archivo `.env.local` no debe subirse al repositorio porque contiene credenciales privadas.
+
+## Ejecucion
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir la aplicacion en:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Autor
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hecho por Fernando Mas Pinto.
