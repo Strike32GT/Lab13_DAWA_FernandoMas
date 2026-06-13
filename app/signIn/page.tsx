@@ -77,12 +77,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl text-gray-900 font-bold mb-2 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] px-4">
+      <div className="bg-white border border-[#E2E8F0] p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 className="text-2xl text-[#134E4A] font-bold mb-2 text-center">
           {isRegistering ? 'Crear cuenta' : 'Iniciar sesión'}
         </h1>
-        <p className="text-sm text-gray-600 text-center mb-6">
+        <p className="text-sm text-[#134E4A]/80 text-center mb-6">
           {isRegistering
             ? 'Regístrate con correo y contraseña.'
             : 'Ingresa con credenciales o un proveedor externo.'}
@@ -91,7 +91,7 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           {isRegistering && (
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-sm font-medium text-[#134E4A]">
                 Nombre
               </label>
               <input
@@ -99,7 +99,7 @@ export default function LoginPage() {
                 type="text"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-gray-900 outline-none focus:border-gray-700"
+                className="mt-1 w-full rounded border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-2 text-[#134E4A] outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-[#0F766E]/20"
                 autoComplete="name"
                 required={isRegistering}
               />
@@ -107,7 +107,7 @@ export default function LoginPage() {
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-[#134E4A]">
               Correo
             </label>
             <input
@@ -115,14 +115,14 @@ export default function LoginPage() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-gray-900 outline-none focus:border-gray-700"
+              className="mt-1 w-full rounded border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-2 text-[#134E4A] outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-[#0F766E]/20"
               autoComplete="email"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-medium text-[#134E4A]">
               Contraseña
             </label>
             <input
@@ -130,14 +130,14 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-gray-900 outline-none focus:border-gray-700"
+              className="mt-1 w-full rounded border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-2 text-[#134E4A] outline-none focus:border-[#0F766E] focus:ring-2 focus:ring-[#0F766E]/20"
               autoComplete={isRegistering ? 'new-password' : 'current-password'}
               required
             />
           </div>
 
           {message && (
-            <p className="rounded bg-gray-100 px-3 py-2 text-sm text-gray-700">
+            <p className="rounded bg-[#E2E8F0] px-3 py-2 text-sm text-[#134E4A]">
               {message}
             </p>
           )}
@@ -145,7 +145,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gray-700 text-white py-2 px-4 rounded hover:bg-black transition disabled:cursor-not-allowed disabled:opacity-70"
+            className="w-full bg-[#0F766E] text-[#F8FAFC] py-2 px-4 rounded hover:bg-[#134E4A] transition disabled:cursor-not-allowed disabled:opacity-70"
           >
             {isLoading
               ? 'Procesando...'
@@ -156,14 +156,14 @@ export default function LoginPage() {
         </form>
 
         <div className="my-6 flex items-center gap-3">
-          <div className="h-px flex-1 bg-gray-200" />
-          <span className="text-xs uppercase text-gray-500">o</span>
-          <div className="h-px flex-1 bg-gray-200" />
+          <div className="h-px flex-1 bg-[#E2E8F0]" />
+          <span className="text-xs uppercase text-[#134E4A]/70">o</span>
+          <div className="h-px flex-1 bg-[#E2E8F0]" />
         </div>
 
         <button
           onClick={() => handleOAuthSignIn('google')}
-          className="mb-3 w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-black transition flex items-center justify-center gap-2"
+          className="mb-3 w-full bg-[#134E4A] text-[#F8FAFC] py-2 px-4 rounded hover:bg-[#0F766E] transition flex items-center justify-center gap-2"
         >
           <FaGoogle />
           Continuar con Google
@@ -171,7 +171,7 @@ export default function LoginPage() {
 
         <button
           onClick={() => handleOAuthSignIn('github')}
-          className="mb-3 w-full bg-gray-900 text-white py-2 px-4 rounded hover:bg-black transition flex items-center justify-center gap-2"
+          className="mb-3 w-full bg-[#134E4A] text-[#F8FAFC] py-2 px-4 rounded hover:bg-[#0F766E] transition flex items-center justify-center gap-2"
         >
           <FaGithub />
           Continuar con GitHub
@@ -179,7 +179,7 @@ export default function LoginPage() {
 
         <button
           onClick={() => handleOAuthSignIn('discord')}
-          className="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition flex items-center justify-center gap-2"
+          className="w-full bg-[#134E4A] text-[#F8FAFC] py-2 px-4 rounded hover:bg-[#0F766E] transition flex items-center justify-center gap-2"
         >
           <FaDiscord />
           Continuar con Discord
@@ -191,7 +191,7 @@ export default function LoginPage() {
             setIsRegistering((current) => !current);
             setMessage('');
           }}
-          className="mt-6 w-full text-sm font-medium text-gray-700 hover:text-black"
+          className="mt-6 w-full text-sm font-medium text-[#0F766E] hover:text-[#134E4A]"
         >
           {isRegistering
             ? 'Ya tengo cuenta'

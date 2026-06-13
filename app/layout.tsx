@@ -26,20 +26,20 @@ export default async function RootLayout({
   return (
     <html lang="en" className={geistSans.className}>
       <body className={`${geistMono.className} antialiased`}>
-        <nav className="w-full bg-black shadow-sm">
+        <nav className="w-full bg-[#134E4A] text-[#F8FAFC] shadow-sm">
           <div className="mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="text-xl font-semibold">
               MyAuthApp
             </Link>
             <ul className="flex items-center justify-center gap-6 text-sm">
               <li>
-                <Link href="/dashboard" className="hover:text-gray-600">
+                <Link href="/dashboard" className="hover:text-[#E2E8F0]">
                   Dashboard
                 </Link>
               </li>
               {session?.user && (
                 <li>
-                  <Link href="/profile" className="hover:text-gray-600">
+                  <Link href="/profile" className="hover:text-[#E2E8F0]">
                     Profile
                   </Link>
                 </li>
